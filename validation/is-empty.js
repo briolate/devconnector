@@ -6,7 +6,7 @@ const isEmpty = value =>
 
 module.exports = isEmpty;
 
-// Pre-es6 way
+// Pre-ES6 way
 // function isEmpty(value) {
 //   return (
 //     value === undefined ||
