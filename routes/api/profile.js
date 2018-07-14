@@ -44,29 +44,26 @@ router.post(
     // Get fields
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (req.body.handle) profileFields.handle = request.body.handle;
-    if (req.body.company) profileFields.company = request.body.company;
-    if (req.body.website) profileFields.website = request.body.website;
-    if (req.body.location) profileFields.location = request.body.location;
-    if (req.body.bio) profileFields.bio = request.body.bio;
-    if (req.body.status) profileFields.status = request.body.status;
+    if (req.body.handle) profileFields.handle = req.body.handle;
+    if (req.body.company) profileFields.company = req.body.company;
+    if (req.body.website) profileFields.website = req.body.website;
+    if (req.body.location) profileFields.location = req.body.location;
+    if (req.body.bio) profileFields.bio = req.body.bio;
+    if (req.body.status) profileFields.status = req.body.status;
     if (req.body.githubusername)
-      profileFields.githubusername = request.body.githubusername;
+      profileFields.githubusername = req.body.githubusername;
     // Skills - Split into array
     if (typeof req.body.skills !== 'undefined') {
-      profileFields.skills = request.body.skills.split(',');
+      profileFields.skills = req.body.skills.split(',');
     }
 
     // Social
     profileFields.social = {};
-    if (req.body.youtube) profileFields.social.youtube = request.body.youtube;
-    if (req.body.twitter) profileFields.social.twitter = request.body.twitter;
-    if (req.body.facebook)
-      profileFields.social.facebook = request.body.facebook;
-    if (req.body.linkedin)
-      profileFields.social.linkedin = request.body.linkedin;
-    if (req.body.instagram)
-      profileFields.social.instagram = request.body.instagram;
+    if (req.body.youtube) profileFields.social.youtube = req.body.youtube;
+    if (req.body.twitter) profileFields.social.twitter = req.body.twitter;
+    if (req.body.facebook) profileFields.social.facebook = req.body.facebook;
+    if (req.body.linkedin) profileFields.social.linkedin = req.body.linkedin;
+    if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
 
     Profile.findOne({ user: req.user.id }).then(profile => {
       if (profile) {
