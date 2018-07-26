@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
 // @access  Private
 router.post(
   '/',
-  passport.authenticate('jwt', { session: false }),
+  passport.authenticate('jwt', { session: false }), //pass {session: false} in passport options so that it wont save the user in the session
   (req, res) => {
     const { errors, isValid } = validatePostInput(req.body);
 
