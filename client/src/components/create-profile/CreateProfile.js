@@ -81,6 +81,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.twitter}
           />
+
           <InputGroup
             placeholder="Facebook Profile URL"
             name="facebook"
@@ -89,6 +90,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.facebook}
           />
+
           <InputGroup
             placeholder="LinkedIn Profile URL"
             name="linkedin"
@@ -97,6 +99,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.linkedin}
           />
+
           <InputGroup
             placeholder="YouTube Profile URL"
             name="youtube"
@@ -105,6 +108,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.youtube}
           />
+
           <InputGroup
             placeholder="Instagram Profile URL"
             name="instagram"

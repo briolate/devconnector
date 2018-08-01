@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
@@ -58,16 +58,20 @@ class CreateProfile extends Component {
         : '';
       profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
       profile.social = !isEmpty(profile.social) ? profile.social : {};
-      profile.twitter = !isEmpty(profile.social.twitter) ? profile.twitter : '';
+      profile.twitter = !isEmpty(profile.social.twitter)
+        ? profile.social.twitter
+        : '';
       profile.facebook = !isEmpty(profile.social.facebook)
-        ? profile.facebook
+        ? profile.social.facebook
         : '';
       profile.linkedin = !isEmpty(profile.social.linkedin)
-        ? profile.linkedin
+        ? profile.social.linkedin
         : '';
-      profile.youtube = !isEmpty(profile.social.youtube) ? profile.youtube : '';
+      profile.youtube = !isEmpty(profile.social.youtube)
+        ? profile.social.youtube
+        : '';
       profile.instagram = !isEmpty(profile.social.instagram)
-        ? profile.instagram
+        ? profile.social.instagram
         : '';
 
       // Set component fields state
@@ -130,6 +134,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.twitter}
           />
+
           <InputGroup
             placeholder="Facebook Profile URL"
             name="facebook"
@@ -138,6 +143,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.facebook}
           />
+
           <InputGroup
             placeholder="LinkedIn Profile URL"
             name="linkedin"
@@ -146,6 +152,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.linkedin}
           />
+
           <InputGroup
             placeholder="YouTube Profile URL"
             name="youtube"
@@ -154,6 +161,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             errors={errors.youtube}
           />
+
           <InputGroup
             placeholder="Instagram Profile URL"
             name="instagram"
@@ -185,6 +193,9 @@ class CreateProfile extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Edit Profile</h1>
+              <Link to="/dashboard" className="btn btn-light">
+                Go Back
+              </Link>
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
@@ -226,7 +237,7 @@ class CreateProfile extends Component {
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                  info="City or city & state suggested (eg. Detroit, MI"
+                  info="City or city & state suggested (eg. Detroit, MI)"
                 />
                 <TextFieldGroup
                   placeholder="* Skills"
@@ -234,7 +245,7 @@ class CreateProfile extends Component {
                   value={this.state.skills}
                   onChange={this.onChange}
                   error={errors.skills}
-                  info="Please use comma separated values (eg. HTML,CSS,JavaScript,PHP"
+                  info="Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)"
                 />
                 <TextFieldGroup
                   placeholder="Github Username"
