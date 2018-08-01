@@ -132,7 +132,7 @@ class CreateProfile extends Component {
             icon="fab fa-twitter"
             value={this.state.twitter}
             onChange={this.onChange}
-            errors={errors.twitter}
+            error={errors.twitter}
           />
 
           <InputGroup
@@ -141,7 +141,7 @@ class CreateProfile extends Component {
             icon="fab fa-facebook"
             value={this.state.facebook}
             onChange={this.onChange}
-            errors={errors.facebook}
+            error={errors.facebook}
           />
 
           <InputGroup
@@ -150,7 +150,7 @@ class CreateProfile extends Component {
             icon="fab fa-linkedin"
             value={this.state.linkedin}
             onChange={this.onChange}
-            errors={errors.linkedin}
+            error={errors.linkedin}
           />
 
           <InputGroup
@@ -159,7 +159,7 @@ class CreateProfile extends Component {
             icon="fab fa-youtube"
             value={this.state.youtube}
             onChange={this.onChange}
-            errors={errors.youtube}
+            error={errors.youtube}
           />
 
           <InputGroup
@@ -168,7 +168,7 @@ class CreateProfile extends Component {
             icon="fab fa-instagram"
             value={this.state.instagram}
             onChange={this.onChange}
-            errors={errors.instagram}
+            error={errors.instagram}
           />
         </div>
       );
